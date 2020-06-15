@@ -34,16 +34,18 @@ function mainCtrl(serviceCtrl) {
 function ctrl1(serviceCtrl) {
   var ctrl1=this;
 
-  ctrl1.message=""
-
   ctrl1.list=serviceCtrl.getList();
 
 };
 
 function ctrl2(serviceCtrl) {
   var ctrl2=this;
-
+  ctrl2.message="Nothing bought yet";
   ctrl2.list=serviceCtrl.getItems();
+
+  if (ctrl2.list.length!=0) {
+    ctrl2.message=""
+  }
 };
 
 function serviceCtrl() {
@@ -52,34 +54,19 @@ function serviceCtrl() {
 
   var toBuy=[
     {
-      item:"cookies", quantity:"5Bags"
+      item:"cookies", quantity:"5"
     },
     {
-      item:"cookies", quantity:"5Bags"
+      item:"chips pack", quantity:"10"
     },
     {
-      item:"cookies", quantity:"5Bags"
+      item:"bismol", quantity:"1"
     },
     {
-      item:"cookies", quantity:"5Bags"
+      item:"blah", quantity:"5"
     },
     {
-      item:"cookies", quantity:"5Bags"
-    },
-    {
-      item:"cookies", quantity:"5Bags"
-    },
-    {
-      item:"cookies", quantity:"5Bags"
-    },
-    {
-      item:"cookies", quantity:"5Bags"
-    },
-    {
-      item:"cookies", quantity:"5Bags"
-    },
-    {
-      item:"cookies", quantity:"5Bags"
+      item:"blahhh", quantity:"5"
     },
 
   ];
