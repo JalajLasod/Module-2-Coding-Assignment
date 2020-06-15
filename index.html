@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="ShoppingList">
+  <head>
+    <meta charset="utf-8">
+    <title>Module-2-Coding-Assignment</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      div.list{
+        column-count: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+
+    <div class="list" ng-controller="mainCtrl as mainCtrl">
+
+      <div class="" ng-controller="ctrl1 as toBuy">
+        <h3>To Buy</h3>
+        <ul ng-repeat="item in toBuy.list">
+          <li>{{item.quantity}} {{item.item}}
+            <button type="button" name="button" ng-click="mainCtrl.bought($index)">Bought</button>
+          </li>
+        </ul>
+        {{mainCtrl.message}}
+      </div>
+
+      <div class="" ng-controller="ctrl2 as bought">
+        <h3>Already Bought</h3>
+        <ul ng-repeat="item in bought.list">
+          <li>bought {{item.quantity}} {{item.item}}</li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
+</html>
